@@ -269,8 +269,8 @@ export class RestaurantsService {
       restaurant.status = RestaurantStatus.APPROVED;
       restaurant.approved_by = adminId;
       restaurant.approved_at = new Date();
-      restaurant.rejection_reason = null;
-      restaurant.rejected_at = null;
+      restaurant.rejection_reason = undefined;
+      restaurant.rejected_at = undefined;
 
       const updated = await this.restaurantRepository.save(restaurant);
       return this.formatRestaurantResponse(updated);

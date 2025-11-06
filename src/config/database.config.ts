@@ -4,7 +4,7 @@ export const postgresConfig = (): TypeOrmModuleOptions => {
   return {
     type: 'postgres',
     host: process.env.DATABASE_HOST || 'localhost',
-    port: parseInt(process.env.DATABASE_PORT) || 5432,
+    port: parseInt(process.env.DATABASE_PORT || '5432'),
     username: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE_NAME,
@@ -25,7 +25,7 @@ export const mongodbConfig = {
 
 export const redisConfig = {
   host: process.env.REDIS_HOST || 'localhost',
-  port: parseInt(process.env.REDIS_PORT) || 6379,
+  port: parseInt(process.env.REDIS_PORT || '6379'),
   password: process.env.REDIS_PASSWORD,
-  db: parseInt(process.env.REDIS_DB) || 0,
+  db: parseInt(process.env.REDIS_DB || '0'),
 };
