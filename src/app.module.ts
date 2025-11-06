@@ -7,9 +7,11 @@ import { postgresConfig } from './config/database.config';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
 import { AddressesModule } from './modules/addresses/addresses.module';
+import { RestaurantsModule } from './modules/restaurants/restaurants.module';
 import { User } from './database/entities/user.entity';
 import { UserProfile } from './database/entities/user-profile.entity';
 import { UserAddress } from './database/entities/user-address.entity';
+import { Restaurant } from './database/entities/restaurant.entity';
 
 @Module({
   imports: [
@@ -19,11 +21,12 @@ import { UserAddress } from './database/entities/user-address.entity';
     }),
     TypeOrmModule.forRoot({
       ...postgresConfig(),
-      entities: [User, UserProfile, UserAddress],
+      entities: [User, UserProfile, UserAddress, Restaurant],
     }),
     AuthModule,
     UsersModule,
     AddressesModule,
+    RestaurantsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
