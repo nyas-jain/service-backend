@@ -1,0 +1,30 @@
+export class MenuItemResponseDto {
+  id: string;
+  restaurant_id: string;
+  name: string;
+  description?: string;
+  image_url?: string;
+  price: number;
+  dietary_tags: string[];
+  spiciness_level: string;
+  is_available: boolean;
+  estimated_prep_time_minutes: number;
+  calories?: number;
+  protein_grams?: number;
+  carbs_grams?: number;
+  fat_grams?: number;
+  fiber_grams?: number;
+  serving_size?: string;
+  special_instructions?: string;
+  category?: string;
+  is_temporary: boolean;
+  availability_end_date?: Date;
+  is_bestseller: boolean;
+  is_new: boolean;
+  average_rating: number;
+  total_ratings: number;
+  total_orders: number;
+  quantity_sold: number;
+  created_at: Date;
+  updated_at: Date;
+}
