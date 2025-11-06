@@ -5,6 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { postgresConfig } from './config/database.config';
 import { AuthModule } from './modules/auth/auth.module';
+import { UsersModule } from './modules/users/users.module';
+import { AddressesModule } from './modules/addresses/addresses.module';
 import { User } from './database/entities/user.entity';
 import { UserProfile } from './database/entities/user-profile.entity';
 import { UserAddress } from './database/entities/user-address.entity';
@@ -20,6 +22,8 @@ import { UserAddress } from './database/entities/user-address.entity';
       entities: [User, UserProfile, UserAddress],
     }),
     AuthModule,
+    UsersModule,
+    AddressesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
